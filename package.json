@@ -1,0 +1,19 @@
+{
+  "name": "cse341-contacts",
+  "version": "1.0.0",
+  "description": "Contact list using node.js, express and mongodb.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crewsbd/CSE341-Contacts.git"
+  },
+  "author": "Brian Crews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crewsbd/CSE341-Contacts/issues"
+  },
+  "homepage": "https://github.com/crewsbd/CSE341-Contacts#readme"
+}
