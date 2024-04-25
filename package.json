@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/crewsbd/CSE341-Contacts/issues"
   },
-  "homepage": "https://github.com/crewsbd/CSE341-Contacts#readme"
+  "homepage": "https://github.com/crewsbd/CSE341-Contacts#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0"
+  }
 }
