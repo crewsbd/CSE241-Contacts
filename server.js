@@ -1,12 +1,26 @@
+// Settings
+require("dotenv").config();
+const port = process.env.PORT || 3000;
+
+// Express Middleware
 const express = require("express");
-require('dotenv').config();
+
+// Local modules
+const mongodb = require("./data/database");
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+// Routes
+app.use("/", require("./routes"));
 
-app.use('/', require("./routes"))
-
-app.listen(port, () => {
-  console.log(`Server listening on localhost:${port}`);
+// Initialize the database
+mongodb.initDatabase((error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    // Start the server
+    app.listen(port, () => {
+      console.log(`Server listening on localhost:${port}`);
+    });
+  }
 });
