@@ -2,7 +2,7 @@
 const route = require('express').Router();
 
 // Controllers
-const usersController = require("../controllers/users");
+const usersController = require("../controllers/contacts");
 
 // Endpoints
 route.get("/", usersController.getAll);

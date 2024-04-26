@@ -2,7 +2,7 @@
 const route = require("express").Router();
 
 // Sub routes
-route.use("/users", require("./users"));
+route.use("/contacts", require("./contacts"));
 
 // Default route
 route.get("/", (req, res) => {

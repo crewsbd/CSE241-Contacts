@@ -10,7 +10,7 @@ require("express").request;
  * @param {import('express').response} response
  */
 const getAll = async (request, response) => {
-  const result = await mongodb.getDatabase().db().collection("users").find();
+  const result = await mongodb.getDatabase().db().collection("contacts").find();
   result.toArray().then((users) => {
     response.setHeader("Content-Type", "application/json");
     response.status(200).json(users);
@@ -27,7 +27,7 @@ const getSingle = async (request, response) => {
   const result = await mongodb
     .getDatabase()
     .db()
-    .collection("users")
+    .collection("contacts")
     .find({ _id: userId });
   result.toArray().then((users) => {
     response.setHeader("Content-Type", "application/json");
