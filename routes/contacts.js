@@ -2,11 +2,11 @@
 const route = require('express').Router();
 
 // Controllers
-const usersController = require("../controllers/contacts");
+const contactsController = require("../controllers/contacts");
 
 // Endpoints
-route.get("/", usersController.getAll);
-route.get("/:id", usersController.getSingle);
+route.get("/", contactsController.getAll);
+route.get("/:id", contactsController.getSingle);
 
 // Module export
 module.exports = route;

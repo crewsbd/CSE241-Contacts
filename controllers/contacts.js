@@ -2,8 +2,6 @@
 const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
-require("express").request;
-
 /**
  * Get all users
  * @param {import('express').request} request
