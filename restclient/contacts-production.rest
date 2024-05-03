@@ -1,0 +1,30 @@
+### CRUD Create
+POST http://cse341-contacts-93ok.onrender.com/contacts HTTP/1.1
+content-type: application/json 
+
+{
+    "firstName": "First",
+    "lastName": "Last",
+    "email": "A@B.COM",
+    "favoriteColor": "Red",
+    "birthday": "2000-01-01T00:00:00Z"
+}
+
+### CRUD Read all
+GET http://cse341-contacts-93ok.onrender.com/contacts HTTP/1.1
+
+### CRUD Read one
+GET http://cse341-contacts-93ok.onrender.com/contacts/662b06f86bf27e57310fb85b HTTP/1.1
+
+### CRUD Update
+PUT http://cse341-contacts-93ok.onrender.com/contacts/662b06f86bf27e57310fb85b HTTP/1.1
+content-type: application/json 
+
+{
+    "firstName": "Only Change This"
+}
+
+### CRUD Delete
+DELETE http://cse341-contacts-93ok.onrender.com/contacts/662b06f86bf27e57310fb85b HTTP/1.1
+content-type: application/json 
+

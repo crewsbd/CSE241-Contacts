@@ -7,7 +7,7 @@ const contactsController = require('../controllers/contacts');
 // Endpoints
 route.get('/', contactsController.getAll);
 route.get('/:id', contactsController.getSingle);
-route.post('/:id', contactsController.createSingle);
+route.post('/', contactsController.createSingle);
 route.put('/:id', contactsController.updateSingle);
 route.delete('/:id', contactsController.deleteSingle);
 

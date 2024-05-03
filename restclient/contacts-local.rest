@@ -1,0 +1,28 @@
+### CRUD Create
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json 
+
+{
+    "firstName": "First",
+    "lastName": "Last",
+    "email": "A@B.COM",
+    "favoriteColor": "Red",
+    "birthday": "2000-01-01T00:00:00Z"
+}
+
+### CRUD Read all
+GET http://localhost:3000/contacts HTTP/1.1
+
+### CRUD Read one
+GET http://localhost:3000/contacts/6338d07ec51624e0408341bd HTTP/1.1
+
+### CRUD Update 
+PUT http://localhost:3000/contacts/650c5812c06bc031e32200a1 HTTP/1.1
+content-type: application/json 
+
+{
+    "firstName": "Only Change This"
+}
+
+### CRUD Delete
+DELETE http://localhost:3000/contacts/662b07d76bf27e57310fb85c HTTP/1.1

@@ -1,1 +1,2 @@
-http://localhost:3000
+GET http://localhost:3000 HTTP/1.1
+GET http://cse341-contacts-93ok.onrender.com/contacts:3000 HTTP/1.1
