@@ -18,4 +18,4 @@ const document = {
   },
 };
 
-swagger('../swagger/swagger-document.json', ['../routes/index.js'], document);
+swagger('./swagger/swagger-document.json', ['./routes/index.js'], document);

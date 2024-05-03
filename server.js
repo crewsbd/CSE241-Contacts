@@ -2,6 +2,9 @@
 require('dotenv').config();
 const port = process.env.PORT || 3000;
 
+// Build swagger docs
+require('./swagger/generateSwagger');
+
 // Express Middleware
 const express = require('express');
 const bodyParser = require('body-parser');
