@@ -1,6 +1,6 @@
 // Users controller
-const mongodb = require("../data/database");
-const ObjectId = require("mongodb").ObjectId;
+const mongodb = require('../data/database');
+const ObjectId = require('mongodb').ObjectId;
 
 /**
  * Get all users
@@ -8,9 +8,9 @@ const ObjectId = require("mongodb").ObjectId;
  * @param {import('express').response} response
  */
 const getAll = async (request, response) => {
-  const result = await mongodb.getDatabase().db().collection("contacts").find();
+  const result = await mongodb.getDatabase().db().collection('contacts').find();
   result.toArray().then((users) => {
-    response.setHeader("Content-Type", "application/json");
+    response.setHeader('Content-Type', 'application/json');
     response.status(200).json(users);
   });
 };
@@ -25,12 +25,28 @@ const getSingle = async (request, response) => {
   const result = await mongodb
     .getDatabase()
     .db()
-    .collection("contacts")
+    .collection('contacts')
     .find({ _id: userId });
   result.toArray().then((users) => {
-    response.setHeader("Content-Type", "application/json");
+    response.setHeader('Content-Type', 'application/json');
     response.status(200).json(users);
   });
 };
 
-module.exports = { getAll, getSingle };
+const createSingle = async (request, response) => {
+  const userId = new ObjectId(request.params.id);
+};
+
+const updateSingle = async (request, response) => {
+  const userId = new ObjectId(request.params.id);
+};
+
+const deleteSingle = async (request, response) => {};
+
+module.exports = {
+  getAll,
+  getSingle,
+  createSingle,
+  updateSingle,
+  deleteSingle,
+};
