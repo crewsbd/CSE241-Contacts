@@ -60,7 +60,11 @@ const createSingle = async (request, response) => {
     birthday: newContact.birthday,
   };
 
-  const result = await mongodb.getDatabase().db().collection('contacts').insertOne(newDocument);
+  const result = await mongodb
+    .getDatabase()
+    .db()
+    .collection('contacts')
+    .insertOne(newDocument);
 
   response.setHeader('Content-Type', 'application/json');
   if (result.acknowledged) {
@@ -80,6 +84,19 @@ const updateSingle = async (request, response) => {
   // #swagger.description = 'Modifies or updates on contacts information with the provided json data. It is only necessary to include data that will change. Other fields will be untouched.'
   // #swagger.tags = ['Contacts']
 
+  /* #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Update contact',
+      schema: {
+        firstName: 'first',
+        lastName: 'last',
+        email: 'a@b.c',
+        favoriteColor: 'Red',
+        birthday: 'now'
+      }
+  }
+  */
+
   const userId = new ObjectId(request.params.id);
   const newContact = request.body;
   const newDocument = {};
@@ -89,7 +106,11 @@ const updateSingle = async (request, response) => {
     newDocument[key] = newContact[key];
   }
 
-  const result = await mongodb.getDatabase().db().collection('contacts').updateOne({ _id: userId }, { $set: newDocument });
+  const result = await mongodb
+    .getDatabase()
+    .db()
+    .collection('contacts')
+    .updateOne({ _id: userId }, { $set: newDocument });
 
   response.setHeader('Content-Type', 'application/json');
   if (result.acknowledged) {
@@ -110,7 +131,11 @@ const deleteSingle = async (request, response) => {
   // #swagger.tags = ['Contacts']
 
   const userId = new ObjectId(request.params.id);
-  const result = await mongodb.getDatabase().db().collection('contacts').deleteOne({ _id: userId });
+  const result = await mongodb
+    .getDatabase()
+    .db()
+    .collection('contacts')
+    .deleteOne({ _id: userId });
 
   response.setHeader('Content-Type', 'application/json');
   if (result.acknowledged) {

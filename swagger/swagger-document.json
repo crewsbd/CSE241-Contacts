@@ -121,6 +121,36 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update contact",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "first"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "last"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "a@b.c"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "Red"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "now"
+                }
+              }
+            }
           }
         ],
         "responses": {
