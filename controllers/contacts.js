@@ -86,14 +86,8 @@ const updateSingle = async (request, response) => {
 
   /* #swagger.parameters['body'] = {
       in: 'body',
-      description: 'Update contact',
-      schema: {
-        firstName: 'first',
-        lastName: 'last',
-        email: 'a@b.c',
-        favoriteColor: 'Red',
-        birthday: 'now'
-      }
+      description: 'Contact information',
+      schema: { $ref: '#/definitions/Contact'}
   }
   */
 

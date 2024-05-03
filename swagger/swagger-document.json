@@ -127,29 +127,7 @@
             "in": "body",
             "description": "Update contact",
             "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "type": "string",
-                  "example": "first"
-                },
-                "lastName": {
-                  "type": "string",
-                  "example": "last"
-                },
-                "email": {
-                  "type": "string",
-                  "example": "a@b.c"
-                },
-                "favoriteColor": {
-                  "type": "string",
-                  "example": "Red"
-                },
-                "birthday": {
-                  "type": "string",
-                  "example": "now"
-                }
-              }
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
@@ -186,6 +164,33 @@
           "500": {
             "description": "Internal Server Error"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "First"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Last"
+        },
+        "email": {
+          "type": "string",
+          "example": "a@b.com"
+        },
+        "favoriteColor": {
+          "type": "string",
+          "example": "Red"
+        },
+        "birthday": {
+          "type": "string",
+          "example": "Now"
         }
       }
     }
