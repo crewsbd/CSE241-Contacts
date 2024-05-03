@@ -10,6 +10,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (request, response) => {
   // #swagger.summary = 'Get all contacts'
   // #swagger.description = 'Returns all contacts in the database.'
+  // #swagger.tags = ['Contacts']
 
   const result = await mongodb.getDatabase().db().collection('contacts').find();
   result.toArray().then((users) => {
@@ -26,6 +27,7 @@ const getAll = async (request, response) => {
 const getSingle = async (request, response) => {
   // #swagger.summary = 'Get a single contact'
   // #swagger.description = 'Return a single contact document corresponding to the supplied ID.'
+  // #swagger.tags = ['Contacts']
 
   const userId = new ObjectId(request.params.id);
   const result = await mongodb
@@ -47,6 +49,7 @@ const getSingle = async (request, response) => {
 const createSingle = async (request, response) => {
   // #swagger.summary = 'Create a single contact'
   // #swagger.description = 'Adds one new contact document to the database. The ID is automatically generated and returned.'
+  // #swagger.tags = ['Contacts']
 
   const newContact = request.body;
   const newDocument = {
@@ -75,6 +78,7 @@ const createSingle = async (request, response) => {
 const updateSingle = async (request, response) => {
   // #swagger.summary = 'Modify one contact'
   // #swagger.description = 'Modifies or updates on contacts information with the provided json data. It is only necessary to include data that will change. Other fields will be untouched.'
+  // #swagger.tags = ['Contacts']
 
   const userId = new ObjectId(request.params.id);
   const newContact = request.body;
@@ -103,6 +107,7 @@ const updateSingle = async (request, response) => {
 const deleteSingle = async (request, response) => {
   // #swagger.summary = 'Delete one contact'
   // #swagger.description = 'Deletes on contact that corresponds with the supplied id url parameter.'
+  // #swagger.tags = ['Contacts']
 
   const userId = new ObjectId(request.params.id);
   const result = await mongodb.getDatabase().db().collection('contacts').deleteOne({ _id: userId });
